@@ -6,6 +6,7 @@ all:
 	dvips document.dvi
 	ps2pdf document.ps
 #	htlatex document.tex "xhtml,fn-in"
+	pandoc --from latex --to epub document.tex -o document.epub --metadata title="Souveraineté numérique: Reconquérir et protéger"
 
 clean:
 	rm -rf *.4ct
@@ -32,3 +33,4 @@ clean:
 	rm -rf *.bbl
 	rm -rf *.log
 	rm -rf *.toc
+	rm -rf *.epub
